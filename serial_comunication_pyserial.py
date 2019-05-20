@@ -14,8 +14,9 @@ def findArduino(ports_found):
         port = ports_found[i]
         string_port = str(port)
 
-        if 'Serielles' or 'Arduinio' in string_port:
-            split_port = string_port.split();
+        if 'Arduino' in string_port:
+            print("True")
+            split_port = string_port.split()
             com_found = split_port[0]
 
     return com_found
@@ -29,10 +30,10 @@ if arduino_port == 'None':
 else:
     print(f"Arduino Port: {arduino_port}")
 
-ser = serial.Serial(arduino_port, baudrate = 9600, timeout = 1)
+    ser = serial.Serial(arduino_port, baudrate = 9600, timeout = 1)
 
-while 1:
+    while 1:
 
-    arduinoData = ser.readline().decode('ascii')
-    print(arduinoData)
+        arduinoData = ser.readline().decode('ascii')
+        print(arduinoData)
 
