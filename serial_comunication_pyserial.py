@@ -34,6 +34,11 @@ else:
 
     while 1:
 
-        arduinoData = ser.readline().decode('ascii')
-        print(arduinoData)
+        userInput = input("Input 'y' to get voltage reading: ")
+
+        if userInput == 'y':
+
+            ser.write(b'f')
+            arduinoData = ser.readline().decode('ascii')
+            print(arduinoData)
 
